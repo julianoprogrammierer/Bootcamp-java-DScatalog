@@ -32,7 +32,7 @@ public class Product implements Serializable {
 	private String imgUrl;
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-	private Instant Date;
+	private Instant date;
 	
 	@ManyToMany
 	@JoinTable(			
@@ -51,7 +51,7 @@ public class Product implements Serializable {
 		this.description = description;
 		this.price = price;
 		this.imgUrl = imgUrl;
-		Date = date;
+		this.date = date;
 	}
 
 	public Long getId() {
@@ -95,11 +95,11 @@ public class Product implements Serializable {
 	}
 
 	public Instant getDate() {
-		return Date;
+		return date;
 	}
 
 	public void setDate(Instant date) {
-		Date = date;
+		this.date = date;
 	}
 
 	public Set<Category> getCategories() {
